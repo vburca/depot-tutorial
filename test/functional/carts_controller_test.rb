@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CartsControllerTest < ActionController::TestCase
-  setup do
+  def setup
     @cart = carts(:one)
   end
 
@@ -41,7 +41,7 @@ class CartsControllerTest < ActionController::TestCase
 
   test "should destroy cart" do
     assert_difference('Cart.count', -1) do
-      session[:cart_id] = @card.id
+      session[:cart_id] = @cart.id
       delete :destroy, id: @cart
     end
 
